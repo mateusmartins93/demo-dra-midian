@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Midian Andrade · Infectologista · Teleconsulta</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Teleconsulta em infectologia para todo o Brasil. PEP, PrEP, HIV, ISTs e medicina do viajante, com sigilo.">
+<link rel="icon" href="img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mocha:#584632;      /* marrom mocha */
+  --mocha-d:#3F3223;
+  --amber:#C8792C;      /* âmbar queimado */
+  --champ:#F4D9A0;      /* dourado champanhe */
+  --bg:#FCF9F3;
+  --soft:#F6ECD6;
+  --white:#FFFFFF;
+  --ink:#3A2E21;
+  --muted:#7A6A58;
+  --line:#E6D9BF;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:-.015em;color:var(--mocha)}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+section[id]{scroll-margin-top:72px}
+.demo{background:var(--mocha-d);color:var(--champ);font-size:12.5px;text-align:center;padding:7px 16px}
+
+/* fundos que marcam cada bloco */
+.bg-soft{background:var(--soft)}
+.bg-white{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bg-dark{background:var(--mocha);color:#E8CF9C}
+.bg-dark h2,.bg-dark h3{color:var(--champ)}
+
+/* cabeçalho de seção: número + rótulo + linha */
+.tag{display:flex;align-items:center;gap:14px;margin-bottom:18px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.tag i{font-style:normal;font-family:Fraunces,serif;font-weight:500;font-size:15px;letter-spacing:0}
+.tag::after{content:"";flex:1;max-width:120px;height:1px;background:currentColor;opacity:.45}
+.bg-dark .tag{color:var(--champ)}
+h2{font-size:clamp(28px,3.6vw,42px);margin-bottom:14px}
+.sub{color:var(--muted);max-width:520px;margin-bottom:48px}
+.bg-dark .sub{color:#D9C49A}
+
+header{position:sticky;top:0;z-index:30;background:rgba(252,249,243,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+header img{height:54px;display:block}
+nav{display:flex;align-items:center;gap:28px;font-size:14px}
+nav a.l{text-decoration:none;color:var(--muted)}
+nav a.l:hover{color:var(--mocha)}
+.btn{display:inline-block;background:var(--mocha);color:var(--champ);text-decoration:none;font-weight:500;font-size:15px;padding:14px 28px;border-radius:999px;border:1.5px solid var(--mocha);cursor:pointer;transition:background .15s,color .15s,transform .15s}
+.btn:hover{background:var(--mocha-d);border-color:var(--mocha-d)}
+.btn.ghost{background:transparent;color:var(--mocha)}
+.btn.ghost:hover{background:var(--soft)}
+.btn.sm{padding:10px 20px;font-size:14px}
+.btn.light{background:var(--champ);color:var(--mocha);border-color:var(--champ)}
+.btn.light:hover{background:#FFF0CF;border-color:#FFF0CF}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+
+/* hero */
+.hero{padding:72px 0 64px}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.hero h1{font-size:clamp(34px,5vw,56px);margin:18px 0 20px}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.lead{font-size:18px;color:var(--muted);max-width:480px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.photo{position:relative}
+.photo img{width:100%;display:block;border-radius:200px 200px 16px 16px;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+.photo::before{content:"";position:absolute;inset:14px -10px -14px 14px;border:1.5px solid var(--champ);border-radius:200px 200px 16px 16px;z-index:-1}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px;background:var(--white);border:1px solid var(--line);border-radius:var(--r)}
+.trust div{padding:22px 26px;font-size:13px;color:var(--muted);border-right:1px solid var(--line)}
+.trust div:last-child{border:0}
+.trust b{display:block;font-family:Fraunces,serif;font-weight:500;font-size:24px;color:var(--mocha)}
+
+/* PEP + medidor */
+.pep{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.pep h2{font-size:clamp(26px,3.2vw,36px)}
+.pep p{font-size:15px;max-width:460px;color:#E8CF9C}
+.meter{background:rgba(244,217,160,.08);border:1px solid rgba(244,217,160,.28);border-radius:var(--r);padding:28px}
+.meter label{display:flex;justify-content:space-between;font-size:14px;color:var(--champ);margin-bottom:14px}
+.meter label b{font-family:Fraunces,serif;font-size:22px;font-weight:500}
+input[type=range]{width:100%;accent-color:var(--amber);height:28px;margin-bottom:6px}
+.bar{height:8px;border-radius:99px;background:rgba(244,217,160,.18);overflow:hidden;margin:6px 0 16px}
+.bar span{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--amber),var(--champ));border-radius:99px;transition:width .25s}
+.meter .res{font-size:15px;color:#fff;min-height:70px}
+.meter .res b{color:var(--champ)}
+.meter small{display:block;margin-top:12px;font-size:12px;color:#C9B488}
+.meter .btn{width:100%;text-align:center;margin-top:16px}
+
+/* consultas */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--amber);transform:translateY(-2px)}
+.card span{font-family:Fraunces,serif;color:var(--amber);font-size:16px}
+.card h3{font-size:24px;margin:8px 0 8px}
+.card p{color:var(--muted);font-size:15px}
+
+/* como funciona */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.step{padding:0 28px 0 0}
+.step .n{width:48px;height:48px;border-radius:50%;background:var(--bg);border:1.5px solid var(--amber);color:var(--amber);display:grid;place-items:center;font-family:Fraunces,serif;font-size:20px;margin-bottom:20px;position:relative;z-index:1}
+.steps::before{content:"";position:absolute;top:24px;left:24px;right:48px;height:1px;background:var(--amber);opacity:.4}
+.step h3{font-size:22px;margin-bottom:6px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* agendar */
+.sched{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:48px;box-shadow:0 20px 50px -30px rgba(88,70,50,.35)}
+.sched>div{min-width:0}
+.lab{font-size:12px;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}
+.reasons{display:grid;gap:8px;margin-bottom:32px}
+.reasons label{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:12px 16px;cursor:pointer;font-size:15px;background:var(--bg)}
+.reasons input{accent-color:var(--mocha)}
+.reasons label:has(input:checked){border-color:var(--mocha);background:var(--soft)}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:14px}
+.day{flex:0 0 auto;min-width:62px;text-align:center;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:8px 10px;cursor:pointer;font:inherit;color:var(--ink)}
+.day small{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.day b{font-family:Fraunces,serif;font-weight:500;font-size:20px}
+.day.on{background:var(--mocha);border-color:var(--mocha);color:var(--champ)}
+.day.on small{color:var(--champ)}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slot{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 0;font:inherit;font-weight:500;cursor:pointer;color:var(--ink)}
+.slot.on{background:var(--mocha);color:var(--champ);border-color:var(--mocha)}
+.slot[disabled]{color:#B9AC99;background:#F6F1E6;text-decoration:line-through;cursor:not-allowed}
+.summary{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:14px;color:var(--muted);margin-bottom:16px}
+.summary b{display:block;font-family:Fraunces,serif;font-weight:500;font-size:19px;color:var(--mocha)}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:13px;font-weight:500;margin-bottom:4px;color:var(--muted)}
+.field input[type=text],.field input[type=tel]{width:100%;font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.field input:focus{outline:2px solid var(--amber);border-color:var(--amber)}
+.consent{display:flex;gap:10px;font-size:12.5px;color:var(--muted);margin:14px 0 20px}
+.consent input{margin-top:4px;accent-color:var(--mocha)}
+.price{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+.ok{display:none;text-align:center;padding:32px 8px}
+.ok .tick{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--amber);color:var(--amber);display:grid;place-items:center;font-size:24px;margin:0 auto 16px}
+.ok .meet{display:inline-block;margin-top:16px;font-size:13px;background:var(--soft);padding:8px 16px;border-radius:999px;color:var(--mocha)}
+
+/* vídeos */
+.reels{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 24px 20px;margin:0 -24px}
+/* corta a moldura do Instagram: o iframe nasce com 320px de largura e a área do vídeo
+   (≈223×398, a partir de x=48 y=55) é ampliada pra preencher o cartão de 260×462 */
+.reel{flex:0 0 260px;width:260px;height:462px;position:relative;overflow:hidden;scroll-snap-align:start;border-radius:var(--r);background:#000}
+.reel iframe{position:absolute;top:0;left:0;width:320px;height:600px;border:0;transform-origin:0 0;transform:scale(1.187) translate(-50px,-57px)}
+.reel:first-child iframe{transform:scale(1.26) translate(-50px,-57px)} /* o 1º embed renderiza uns px diferente dos outros */
+.reels::-webkit-scrollbar{height:6px}
+.reels::-webkit-scrollbar-thumb{background:rgba(244,217,160,.35);border-radius:9px}
+.more{margin-top:20px;font-size:14px}
+.more a{color:var(--champ);text-underline-offset:4px}
+
+/* sobre */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
+.about p{color:var(--muted);margin-bottom:12px}
+.facts{list-style:none;border:1px solid var(--line);border-radius:var(--r);background:var(--white)}
+.facts li{padding:16px 22px;border-bottom:1px solid var(--line);font-size:15px}
+.facts li:last-child{border:0}
+.crm{font-size:12.5px;color:var(--muted);margin-top:18px;letter-spacing:.04em}
+
+/* faq */
+.faq{max-width:760px}
+details{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:10px}
+summary{cursor:pointer;font-family:Fraunces,serif;font-size:20px;color:var(--mocha);list-style:none}
+summary::after{content:"+";float:right;color:var(--amber)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);font-size:15px;max-width:600px}
+
+footer{padding:48px 0;background:var(--mocha-d);color:#D9C49A;font-size:13px}
+footer img{height:40px;filter:brightness(0) invert(1) sepia(.4) saturate(.8);opacity:.9;margin-bottom:16px;display:block}
+.wa{position:fixed;right:18px;bottom:18px;background:var(--amber);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:13px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(88,70,50,.3);z-index:40}
+
+/* aparecer na rolagem (sem JS tudo fica visível) */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:820px){
+  .hero .grid,.sched,.about,.pep{grid-template-columns:minmax(0,1fr);gap:36px}
+  .hero{padding-top:40px}
+  section{padding:64px 0}
+  nav a.l{display:none}
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;gap:28px}
+  .steps::before{display:none}
+  .sched{padding:22px}
+  .photo{max-width:340px}
+  .trust{grid-template-columns:1fr}
+  .trust div{border-right:0;border-bottom:1px solid var(--line)}
+  .trust div:last-child{border:0}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="demo">Protótipo de demonstração. Horários e confirmação são ilustrativos e nada é enviado.</div>
+
+<header>
+  <div class="wrap">
+    <a href="#"><img src="img/logo.svg" alt="Dra. Midian Andrade · Infectologista"></a>
+    <nav>
+      <a class="l" href="#consultas">Consultas</a>
+      <a class="l" href="#conteudo">Vídeos</a>
+      <a class="l" href="#sobre">Sobre</a>
+      <a class="l" href="#faq">Dúvidas</a>
+      <a class="btn sm" href="#agendar">Agendar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">Teleconsulta em infectologia</span>
+        <h1>Cuidado discreto, <em>de onde você estiver.</em></h1>
+        <p class="lead">PEP, PrEP, HIV, ISTs e medicina do viajante. Consulta por vídeo para todo o Brasil, com sigilo e acompanhamento depois.</p>
+        <div class="cta">
+          <a class="btn" href="#agendar">Escolher horário</a>
+          <a class="btn ghost" href="#pep">Exposição recente</a>
+        </div>
+      </div>
+      <div class="photo"><picture><source srcset="img/dra-retrato.webp" type="image/webp"><img src="img/dra-retrato.jpg" width="796" height="1112" alt="Dra. Midian Andrade em seu consultório" fetchpriority="high"></picture></div>
+    </div>
+    <div class="trust rv">
+      <div><b>15+ anos</b>de infectologia</div>
+      <div><b>100% online</b>todo o Brasil</div>
+      <div><b>Sigilo</b>em todo o atendimento</div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 PEP -->
+<section id="pep" class="bg-dark">
+  <div class="wrap pep">
+    <div class="rv">
+      <div class="tag"><i>01</i> Urgência</div>
+      <h2>Exposição há menos de 72 horas?</h2>
+      <p>A PEP deve começar o quanto antes e pode ser indicada até 72h depois da exposição. Não espere uma data livre na agenda: chame direto no WhatsApp.</p>
+    </div>
+    <div class="meter rv">
+      <label for="horas">Há quanto tempo foi a exposição? <b id="hVal">12 h</b></label>
+      <input type="range" id="horas" min="1" max="96" value="12">
+      <div class="bar"><span id="barra"></span></div>
+      <div class="res" id="res"></div>
+      <a class="btn light" id="pepZap" href="#" target="_blank" rel="noopener">Falar agora no WhatsApp</a>
+      <small>Estimativa informativa. Não substitui a avaliação médica.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 02 CONSULTAS -->
+<section id="consultas" class="bg-white">
+  <div class="wrap">
+    <div class="tag rv"><i>02</i> Consultas</div>
+    <h2 class="rv">Para o que você precisa</h2>
+    <p class="sub rv">Cada consulta tem um objetivo claro, com conduta definida e acompanhamento.</p>
+    <div class="cards">
+      <div class="card rv"><span>01</span><h3>PrEP</h3><p>Começar, ajustar ou manter a prevenção, com acompanhamento trimestral.</p></div>
+      <div class="card rv"><span>02</span><h3>HIV</h3><p>Exames, tratamento e acompanhamento, com foco em adesão e qualidade de vida.</p></div>
+      <div class="card rv"><span>03</span><h3>ISTs</h3><p>Sífilis, herpes, corrimento e outras infecções: diagnóstico e tratamento.</p></div>
+      <div class="card rv"><span>04</span><h3>Medicina do viajante</h3><p>Vacinas e orientação preventiva para viagens nacionais e internacionais.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 COMO FUNCIONA -->
+<section id="como">
+  <div class="wrap">
+    <div class="tag rv"><i>03</i> Como funciona</div>
+    <h2 class="rv">Três passos, sem sair de casa</h2>
+    <p class="sub rv">Do agendamento ao acompanhamento, tudo online.</p>
+    <div class="steps">
+      <div class="step rv"><div class="n">1</div><h3>Você escolhe o horário</h3><p>Escolhe o motivo, o dia e o horário livre na agenda da Dra.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>Recebe o link</h3><p>A confirmação chega no WhatsApp, com o link da videochamada.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Faz a consulta</h3><p>Conversa por vídeo, com sigilo, e sai com a conduta e o acompanhamento definidos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 AGENDAR -->
+<section id="agendar" class="bg-soft">
+  <div class="wrap">
+    <div class="tag rv"><i>04</i> Agendamento</div>
+    <h2 class="rv">Marque sua consulta online</h2>
+    <p class="sub rv">Escolha o motivo, o dia e o horário. A confirmação chega com o link da videochamada.</p>
+
+    <div class="sched rv">
+      <div>
+        <div class="lab">1 · Motivo</div>
+        <div class="reasons">
+          <label><input type="radio" name="motivo" value="PrEP" checked> Começar ou manter a PrEP</label>
+          <label><input type="radio" name="motivo" value="HIV"> HIV: exames, tratamento ou acompanhamento</label>
+          <label><input type="radio" name="motivo" value="ISTs"> ISTs: sífilis, herpes, corrimento ou outras</label>
+          <label><input type="radio" name="motivo" value="Viajante"> Medicina do viajante</label>
+        </div>
+        <div class="lab">2 · Dia e horário</div>
+        <div class="days" id="days"></div>
+        <div class="slots" id="slots"></div>
+      </div>
+
+      <div>
+        <div id="formBox">
+          <div class="lab">3 · Seus dados</div>
+          <div class="summary" id="summary">Escolha um horário ao lado.</div>
+          <div class="field"><label for="nome">Nome</label><input type="text" id="nome" autocomplete="name" placeholder="Seu nome"></div>
+          <div class="field"><label for="zap">WhatsApp</label><input type="tel" id="zap" autocomplete="tel" placeholder="(00) 00000-0000"></div>
+          <label class="consent"><input type="checkbox" id="lgpd"> <span>Concordo com o uso dos meus dados apenas para agendar e realizar a consulta, conforme a política de privacidade (LGPD).</span></label>
+          <button class="btn" id="confirmar" style="width:100%" disabled>Confirmar agendamento</button>
+          <p class="price">Consulta online · R$ 400 · sem pagamento no agendamento</p>
+        </div>
+        <div class="ok" id="ok">
+          <div class="tick">✓</div>
+          <h3>Consulta agendada</h3>
+          <p id="okTxt" style="color:var(--muted);margin-top:8px"></p>
+          <span class="meet">Link da videochamada enviado no WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 VÍDEOS -->
+<section id="conteudo" class="bg-dark">
+  <div class="wrap">
+    <div class="tag rv"><i>05</i> Conteúdo</div>
+    <h2 class="rv">Conheça a Dra. antes da consulta</h2>
+    <p class="sub rv">Vídeos curtos do Instagram dela, com informação direta sobre prevenção e saúde.</p>
+    <div class="reels rv">
+      <div class="reel"><iframe loading="lazy" title="Vídeo da Dra. Midian no Instagram" src="https://www.instagram.com/reel/DeT7V7dt6h-/embed/"></iframe></div>
+      <div class="reel"><iframe loading="lazy" scrolling="no" title="Vídeo da Dra. Midian no Instagram" src="https://www.instagram.com/reel/DecZB3LIBZs/embed/"></iframe></div>
+      <div class="reel"><iframe loading="lazy" scrolling="no" title="Vídeo da Dra. Midian no Instagram" src="https://www.instagram.com/reel/DeZE9vvtH7H/embed/"></iframe></div>
+      <div class="reel"><iframe loading="lazy" scrolling="no" title="Vídeo da Dra. Midian no Instagram" src="https://www.instagram.com/reel/DeZE33wNYGY/embed/"></iframe></div>
+      <div class="reel"><iframe loading="lazy" scrolling="no" title="Vídeo da Dra. Midian no Instagram" src="https://www.instagram.com/reel/DeUkfDht_LG/embed/"></iframe></div>
+    </div>
+    <p class="more"><a href="https://www.instagram.com/dramidianandrade/" target="_blank" rel="noopener">Ver mais no Instagram @dramidianandrade</a></p>
+  </div>
+</section>
+
+<!-- 06 SOBRE -->
+<section id="sobre">
+  <div class="wrap about">
+    <div class="rv">
+      <div class="tag"><i>06</i> Sobre</div>
+      <h2>Dra. Midian Andrade</h2>
+      <p>Médica infectologista, formada pela PUC-PR e especializada pela PUCCAMP. Atende por teleconsulta, com conversa clara e acompanhamento individualizado depois da consulta.</p>
+      <p class="crm">CRM-SC 22.697 · RQE 13.198</p>
+    </div>
+    <ul class="facts rv">
+      <li>Medicina pela PUC-PR</li>
+      <li>Infectologia pela PUCCAMP</li>
+      <li>Mais de 15 anos de experiência</li>
+      <li>Atendimento online em todo o Brasil</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 07 FAQ -->
+<section id="faq" class="bg-soft">
+  <div class="wrap">
+    <div class="tag rv"><i>07</i> Dúvidas</div>
+    <h2 class="rv">Perguntas frequentes</h2>
+    <div class="faq rv" style="margin-top:28px">
+      <details><summary>Como funciona a teleconsulta?</summary><p>Você agenda aqui, recebe o link da videochamada no WhatsApp e entra no horário marcado, de qualquer lugar do Brasil.</p></details>
+      <details><summary>Meus dados ficam protegidos?</summary><p>Os dados são usados só para agendar e atender você. O motivo da consulta fica restrito ao que a médica precisa ver.</p></details>
+      <details><summary>Qual o prazo da PEP?</summary><p>Até 72 horas após a exposição. Quanto antes, melhor. Chame no WhatsApp em vez de agendar.</p></details>
+      <details><summary>Como é o acompanhamento da PrEP?</summary><p>Consultas trimestrais com monitoramento clínico e laboratorial.</p></details>
+      <details><summary>Atende para viagem internacional?</summary><p>Sim, com orientação de vacinas e prevenção para o destino.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.svg" alt="">
+    Dra. Midian Andrade · Infectologista · CRM-SC 22.697 · RQE 13.198<br>
+    Teleconsulta para todo o Brasil · Política de privacidade
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5547999508655" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+(function(){
+  /* ---------- medidor da PEP ---------- */
+  var h=document.getElementById('horas'), hv=document.getElementById('hVal'),
+      bar=document.getElementById('barra'), res=document.getElementById('res'), zap=document.getElementById('pepZap');
+  function pep(){
+    var n=+h.value, txt;
+    hv.textContent=n>=96?'96 h ou mais':n+' h';
+    if(n<=72){
+      var resta=72-n;
+      bar.style.width=Math.max(4,(resta/72)*100)+'%';
+      res.innerHTML='Você ainda está dentro da janela de <b>72 h</b>. Restam cerca de <b>'+resta+' h</b>. Quanto antes começar, melhor.';
+      txt='Olá, Dra. Midian. Tive uma exposição há cerca de '+n+' horas e preciso avaliar PEP.';
+    }else{
+      bar.style.width='4%';
+      res.innerHTML='A janela de 72 h já passou, mas <b>ainda vale avaliar</b>: a conversa define os exames, investiga outras ISTs e orienta o acompanhamento.';
+      txt='Olá, Dra. Midian. Tive uma exposição há mais de 72 horas e preciso de orientação.';
+    }
+    zap.href='https://wa.me/5547999508655?text='+encodeURIComponent(txt);
+  }
+  h.addEventListener('input',pep); pep();
+
+  /* ---------- agendamento (ilustrativo) ---------- */
+  var WD=['dom','seg','ter','qua','qui','sex','sáb'];
+  var HORAS=['09:00','10:00','11:00','14:00','15:00','16:00'];
+  var daysEl=document.getElementById('days'), slotsEl=document.getElementById('slots');
+  var summary=document.getElementById('summary'), btn=document.getElementById('confirmar');
+  var nome=document.getElementById('nome'), zapIn=document.getElementById('zap'), lgpd=document.getElementById('lgpd');
+  var dia=null, hora=null;
+
+  var lista=[], d=new Date(); d.setHours(0,0,0,0);
+  while(lista.length<8){ d.setDate(d.getDate()+1); if(d.getDay()!==0&&d.getDay()!==6) lista.push(new Date(d)); }
+
+  function ocupado(dt,hh){ return ((dt.getDate()*7 + HORAS.indexOf(hh)*3) % 5)===0; }
+  function fmt(dt){ return WD[dt.getDay()]+', '+dt.getDate()+'/'+String(dt.getMonth()+1).padStart(2,'0'); }
+
+  lista.forEach(function(dt){
+    var b=document.createElement('button'); b.type='button'; b.className='day';
+    b.innerHTML='<small>'+WD[dt.getDay()]+'</small><b>'+dt.getDate()+'</b>';
+    b.onclick=function(){ dia=dt; hora=null; marca(); slots(); atualiza(); };
+    daysEl.appendChild(b);
+  });
+  function marca(){ [].forEach.call(daysEl.children,function(el,i){ el.classList.toggle('on',lista[i]===dia); }); }
+  function slots(){
+    slotsEl.innerHTML='';
+    HORAS.forEach(function(hh){
+      var b=document.createElement('button'); b.type='button'; b.className='slot'; b.textContent=hh;
+      if(ocupado(dia,hh)) b.disabled=true;
+      b.onclick=function(){ hora=hh; [].forEach.call(slotsEl.children,function(x){x.classList.toggle('on',x===b);}); atualiza(); };
+      slotsEl.appendChild(b);
+    });
+  }
+  function atualiza(){
+    var m=document.querySelector('input[name=motivo]:checked').value;
+    summary.innerHTML = (dia&&hora) ? '<b>'+fmt(dia)+' às '+hora+'</b>Teleconsulta · '+m : 'Escolha um dia e um horário ao lado.';
+    btn.disabled = !(dia&&hora&&nome.value.trim().length>1&&zapIn.value.replace(/\D/g,'').length>=10&&lgpd.checked);
+  }
+  [nome,zapIn,lgpd].forEach(function(el){ el.addEventListener('input',atualiza); el.addEventListener('change',atualiza); });
+  [].forEach.call(document.querySelectorAll('input[name=motivo]'),function(r){ r.addEventListener('change',atualiza); });
+  btn.onclick=function(){
+    document.getElementById('formBox').style.display='none';
+    document.getElementById('ok').style.display='block';
+    document.getElementById('okTxt').textContent=nome.value.trim().split(' ')[0]+', sua consulta está marcada para '+fmt(dia)+' às '+hora+'.';
+  };
+  dia=lista[0]; marca(); slots(); atualiza();
+
+  /* ---------- aparecer na rolagem ---------- */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12});
+    rv.forEach(function(el){ io.observe(el); });
+  }else{ rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+</body>
+</html>

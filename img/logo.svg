@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Dra. Midian Andrade, Infectologista">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="48" cy="48" r="40" stroke="#C8792C" stroke-width="1.6"/>
+    <path d="M28 66 V36 L48 58 L68 36 V66" stroke="#584632" stroke-width="3.2"/>
+  </g>
+  <circle cx="48" cy="26" r="3.6" fill="#C8792C"/>
+  <text x="104" y="50" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="29" font-weight="600" fill="#584632" letter-spacing="-0.3" textLength="236" lengthAdjust="spacingAndGlyphs">Midian Andrade</text>
+  <text x="105" y="74" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="500" fill="#C8792C" letter-spacing="3" textLength="234" lengthAdjust="spacing">INFECTOLOGISTA</text>
+</svg>
